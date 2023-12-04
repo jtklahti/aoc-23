@@ -32,9 +32,8 @@ pub fn parse_digit(s: &str) -> u32 {
     let numeral = parse_digit_numeral(s);
     if numeral > 0 {
         return numeral;
-    } else {
-        parse_digit_textual(s)
-    }
+    } 
+    return parse_digit_textual(s);
 }
 
 pub fn parse_line(line: String) -> u32 {
@@ -46,7 +45,7 @@ pub fn parse_line(line: String) -> u32 {
     for index in 0..line.len() {
         let str = &line[index..];
         let digit = parse_digit(str);
-        if 0 == digit {
+        if digit == 0 {
             continue;
         }
         if first == 0 {
